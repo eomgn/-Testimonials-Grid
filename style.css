@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+   --bg-daniel: #6d34c9;
+   --bg-daniel-hover: #733fc8db;
+   --bg-jonathan: #49556b;
+   --bg-jonathan-hover: #49556bc7;
+   --bg-jeanette: #ffffff;
+   --bg-jeanette-hover: #797777;
+   --bg-patrick: #18202d;
+   --bg-patrick-hover: #132c55;
+   --bg-kira: #ffffff;
+   --bg-kira-hover: #7b5656;
+
+   --border-color-ff: #ffffff;
+   --border-color-00: #000000;
+
+   --text-color: #ffffff;
+   --text-grad: #c6c8cb;
+}
+
+main {
+   min-height: 100vh;
+   display: grid;
+   place-content: center;
+   padding: 40px;
+
+   font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+   max-width: 400px;
+   display: grid;
+   gap: 15px;
+
+   margin-bottom: 30px;
+
+   transition: 0.8s ease;
+   border-radius: 12px;
+}
+
+.wrapper {
+   padding: 30px;
+
+   border-radius: 12px;
+
+   box-shadow: 5px 3px 10px #dddddd;
+}
+
+.header {
+   display: flex;
+   gap: 30px;
+}
+
+.img img {
+   border: 2px solid var(--border-color-ff);
+   border-radius: 50%;
+}
+
+.name h2 {
+   font-size: 18px;
+   color: var(--text-color);
+}
+
+.name span {
+   font-size: 14px;
+   color: var(--text-grad);
+}
+
+.desc {
+   margin-top: 20px;
+}
+
+.desc p {
+   font-weight: 600;
+   font-size: 18px;
+
+   color: var(--text-color);
+}
+
+.paragraph {
+   margin-top: 20px;
+}
+
+.paragraph p {
+   font-weight: 500;
+   font-size: 14px;
+   line-height: 20px;
+
+   color: var(--text-grad);
+}
+
+.container:hover {
+   transform: scale(110%);
+}
+
+.daniel .wrapper {
+   background-image: url('./assets/bg-pattern-quotation.svg');
+   background-repeat: no-repeat;
+   background-position: left 85% top 0%;
+}
+
+.daniel {
+   background-color: var(--bg-daniel);
+}
+
+.daniel:hover {
+   background-color: var(--bg-daniel-hover);
+}
+
+.jonathan {
+   background-color: var(--bg-jonathan);
+}
+
+.jonathan:hover {
+   background-color: var(--bg-jonathan-hover);
+}
+
+.jeanette {
+   background-color: var(--bg-jeanette);
+}
+
+.jeanette img {
+   border-color: #000000;
+}
+
+.jeanette .name h2 {
+   color: #000000;
+}
+
+.jeanette .desc p {
+   color: #000000;
+}
+
+.jeanette:hover {
+   background-color: var(--bg-jeanette-hover);
+}
+
+.patrick {
+   background-color: var(--bg-patrick);
+}
+
+.patrick:hover {
+   background-color: var(--bg-patrick-hover);
+}
+
+.kira {
+   background-color: var(--bg-jeanette);
+}
+
+.kira img {
+   border-color: #000000;
+}
+
+.kira .name h2 {
+   color: #000000;
+}
+
+.kira .desc p {
+   color: #000000;
+}
+
+.kira:hover {
+   background-color: var(--bg-kira-hover);
+}
+
+@media (min-width: 500px) {
+   main {
+      display: grid;
+      grid-template-areas:
+         'daniel jonathan'
+         'kira kira'
+         'jeanette patrick';
+      gap: 25px;
+   }
+
+   .daniel {
+      grid-area: daniel;
+   }
+
+   .jonathan {
+      grid-area: jonathan;
+   }
+
+   .jeanette {
+      grid-area: jeanette;
+   }
+   .patrick {
+      grid-area: patrick;
+   }
+   .kira {
+      grid-area: kira;
+      min-width: 100%;
+   }
+}
