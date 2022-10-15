@@ -22,6 +22,7 @@
    --border-color-00: #000000;
 
    --text-color: #ffffff;
+   --text-color-00: #000000;
    --text-grad: #c6c8cb;
 }
 
@@ -127,15 +128,15 @@ main {
 }
 
 .jeanette img {
-   border-color: #000000;
+   border-color: var(--border-color-00);
 }
 
 .jeanette .name h2 {
-   color: #000000;
+   color: var(--text-color-00);
 }
 
 .jeanette .desc p {
-   color: #000000;
+   color: var(--text-color-00);
 }
 
 .jeanette:hover {
@@ -155,19 +156,29 @@ main {
 }
 
 .kira img {
-   border-color: #000000;
+   border-color: var(--border-color-00);
 }
 
 .kira .name h2 {
-   color: #000000;
+   color: var(--text-color-00);
 }
 
 .kira .desc p {
-   color: #000000;
+   color: var(--text-color-00);
 }
 
 .kira:hover {
    background-color: var(--bg-kira-hover);
+}
+
+::-webkit-scrollbar {
+   background-color: #ffffff;
+   width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: #49556b;
+   border-radius: 20px;
 }
 
 @media (min-width: 500px) {
@@ -177,7 +188,7 @@ main {
          'daniel jonathan'
          'kira kira'
          'jeanette patrick';
-      gap: 25px;
+      gap: 30px;
    }
 
    .daniel {
@@ -197,5 +208,41 @@ main {
    .kira {
       grid-area: kira;
       min-width: 100%;
+   }
+}
+
+@media (min-width: 1040px) {
+   main {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+         'daniel daniel jonathan kira'
+         'jeanette patrick patrick kira';
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+
+      padding: 150px;
+   }
+
+   .daniel {
+      grid-area: daniel;
+      min-width: 100%;
+   }
+
+   .jonathan {
+      grid-area: jonathan;
+   }
+
+   .jeanette {
+      grid-area: jeanette;
+   }
+
+   .patrick {
+      grid-area: patrick;
+      min-width: 100%;
+   }
+
+   .kira {
+      grid-area: kira;
    }
 }
